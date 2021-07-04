@@ -10,8 +10,11 @@ class Alien {
     var id: Int?  = null
     @Column
     var name: String? = null
+    @Column
+    var tech: String? = null
+
 
     override fun toString(): String {
-        return "Alien(id=$id, name=$name)"
+        return "Alien(id=$id, name=$name, tech=$tech)"
     }
 }
