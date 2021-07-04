@@ -8,11 +8,16 @@
 </head>
 <body>
 
-	<form>
-	    <input type="text" name="aid"></input><br>
-	    <input type="text" name="aid"></input><br>
+	<form action="addAlien">
+	    <input type="text" name="id"></input><br>
+	    <input type="text" name="name"></input><br>
 	    <input type="submit"></input><br>
 	</form>
+
+	<form action="getAlien">
+    	    <input type="text" name="id"></input><br>
+    	    <input type="submit"></input><br>
+    </form>
 
 </body>
 </html>
