@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.websocket.server.PathParam;
+import java.util.List;
+import java.util.Optional;
 
 @Controller
 public class AlienController {
@@ -43,15 +45,15 @@ public class AlienController {
         return mv;
     }
 
-    @RequestMapping("/aliens")
+    @RequestMapping(path = "/aliens", produces = {"application/json", "application/xml"})
     @ResponseBody
-    public String getAliens() {
-        return alienRepository.findAll().toString();
+    public List<Alien> getAliens() {
+        return alienRepository.findAll();
     }
 
     @RequestMapping("/alien/{id}")
     @ResponseBody
-    public String getAlienByPath(@PathVariable("id") Integer id ) {
-        return alienRepository.findById(id).orElse(new Alien()).toString();
+    public Optional<Alien> getAlienByPath(@PathVariable("id") Integer id) {
+        return alienRepository.findById(id);
     }
 }
